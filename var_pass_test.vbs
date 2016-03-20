@@ -19,7 +19,11 @@ l(0) = 1
 
 echo "before calls l = " & l(0)
 testV(l)
-echo "after testV() call l = " & l(0)
+echo "after testV() l = " & l(0)
 testR(l)
+echo "after testR() l = " & l(0)
+call testR(l)
 echo "after testR() call l = " & l(0)
+testR l
+echo "after testR l = " & l(0)
 
