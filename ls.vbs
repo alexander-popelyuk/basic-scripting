@@ -43,7 +43,7 @@ select case arg.count
         'print items for each path argument
         for i = 0 to arg.count - 1
             'print path
-            echo vbCRLF & arg(i) & ":"
+            echo vbCRLF & fso.GetAbsolutePathName(arg(i)) & ":"
             'print items for path
             print_items(arg(i))
         next
