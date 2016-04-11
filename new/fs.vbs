@@ -1,5 +1,5 @@
 '----------------------------------------------------------------------
-' working with files
+' working with file system
 '----------------------------------------------------------------------
 
 'all file manipulations start with creating the 'FileSystemObject'
