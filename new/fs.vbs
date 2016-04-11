@@ -34,9 +34,31 @@ for each drv in fso.Drives
     print vbCRLF
 next
 
-'get temporary storage path
+'get special folders paths
+const sfWindowsFolder   = 0
+const sfSystemFolder    = 1
+const sfTemporaryFolder = 2
+
+win = fso.GetSpecialFolder(sfWindowsFolder)
+sys = fso.GetSpecialFolder(sfSystemFolder)
+tmp = fso.GetSpecialFolder(sfTemporaryFolder)
+
+print "Windows Folder is: '" & win & "'" & vbCRLF
+print "System Folder is: '" & sys & "'" & vbCRLF
+print "Temporary Folder is: '" & tmp & "'" & vbCRLF
 
 'create folder
+fname = "vbs_folder"
+fpath = fso.BuildPath(tmp, fname)
+print "folder path is: " & fpath & vbCRLF
+set fobj = fso.CreateFolder(fpath)
+    ' stop until describe error handling
+if IsNull(fobj) then
+    print "unable to create folder!"
+else
+    print "folder successfully created!"
+end if
+
 'create file
 'write to file
 'read from file
